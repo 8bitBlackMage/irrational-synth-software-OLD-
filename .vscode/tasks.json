@@ -5,20 +5,22 @@
     "tasks": [
         {
             "type": "shell",
-            "label": "clang build active file",
-            "command": "/usr/bin/clang",
+            "label": "clang build all file",
+            "command": "/usr/bin/clang++",
             "args": [
                 "-g",
-                "${file}",
+                "${workspaceFolder}/TextureLoading.cpp",
+                "${workspaceFolder}/Shapes/shapes.cpp",
+                "${workspaceFolder}/entryPoint.cpp",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}",
-                 "-lraylib",
-                 "-lGL",
-                 "-lm",
-                 "-lpthread",
-                 "-ldl",
-                  "-lrt",
-                  "-lX11",
+                "${workspaceFolder}/irrationalFrontend",
+                "-lraylib",
+                "-lGL",
+                "-lm",
+                "-lpthread",
+                "-ldl",
+                 "-lrt",
+                 "-lX11"
             ],
             "options": {
                 "cwd": "/usr/bin"

@@ -8,7 +8,7 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/entryPoint",
+            "program": "${workspaceFolder}/irrationalFrontend",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
