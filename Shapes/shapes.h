@@ -1,5 +1,6 @@
+#pragma once
 #include <raylib.h>
-
+#include "../TextureLoading.h"
 
 
 
@@ -11,9 +12,15 @@ Drawable(){}
 
 virtual void Draw() =0;
 
-int m_Xpos;
-int m_Ypos;
-int m_Size;
+float m_Xpos;
+float m_Ypos;
+float m_height;
+float m_width;
+Color m_Tint;
+Rectangle SorceRect;
+Rectangle DestRect;
+Vector2 origin;
+TextureManager *m_Manager;
 };
 
 class Control : public Drawable
@@ -36,28 +43,19 @@ class dial : public Control
 {
 
 public:
-dial(int x, int y, int maxpos, int minpos)
-{
-
-}
-void Draw() override
-{
+dial(int x, int y,int h, int w , int maxpos, int minpos, TextureManager* Manager);
+dial(int x, int y,int h, int w, TextureManager* Manager);
+void Draw() override;
 
 
-}
-
-void Update() override
-{
-
-
-
-}
+void Update() override;
 private:
-int m_CurrentPos;
+float m_CurrentPos = 0;
 int m_lineEndPointX;
 int m_lineEndPointY;
-int m_CurrentAngle;
-
+float m_CurrentAngle;
+int m_MaxPos;
+int m_MinPos;
 
 };
 
