@@ -5,8 +5,9 @@
 
 
 class Drawable
-{
 //container class for all drawable objects for batch drawing calls
+{
+
 public:
 Drawable(){}
 
@@ -24,9 +25,10 @@ TextureManager *m_Manager;
 };
 
 class Control : public Drawable
-{
 //container class for all controls on screen for batch drawing and update calls 
 //inherets from Drawable.
+{
+
 public:
 
 
@@ -40,11 +42,16 @@ virtual void Update()=0;
 
 
 class dial : public Control
+//standard rotating potentiomiter 
 {
 
 public:
-dial(int x, int y,int h, int w , int maxpos, int minpos, TextureManager* Manager);
-dial(int x, int y,int h, int w, TextureManager* Manager);
+
+//constructor that allows for custom positions 
+dial(int x, int y,int size, int maxpos, int minpos, TextureManager* Manager);
+
+//constructor with standard midi initalisations
+dial(int x, int y,int size, TextureManager* Manager);
 void Draw() override;
 
 
