@@ -45,3 +45,32 @@ void dial::Draw()
 {
 DrawTexturePro(m_Manager->m_Textures.at("Dial"),SorceRect,DestRect,origin, m_CurrentAngle,WHITE);
 }
+
+
+
+
+
+
+
+ListEntry::ListEntry(int x, int y, int size )
+{
+m_Xpos = x;
+m_Ypos = y;
+
+}
+
+ListEntry::ListEntry(){
+
+}
+
+ListEntry::~ListEntry(){
+
+}
+
+void ListEntry::Draw(){
+
+}
+
+void ListEntry::Update(){
+    
+}

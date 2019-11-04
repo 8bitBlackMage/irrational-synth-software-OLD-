@@ -67,3 +67,22 @@ int m_MinPos;
 };
 
 
+
+
+class ListEntry : public Control
+{
+public:
+ListEntry(int x, int y, int size);
+ListEntry();
+
+
+~ListEntry();
+
+
+void Draw() override;
+void Update() override;
+
+
+std::string m_content; 
+};
+
