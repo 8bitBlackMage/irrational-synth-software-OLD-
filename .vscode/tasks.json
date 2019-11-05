@@ -11,6 +11,8 @@
                 "-g",
                 "${workspaceFolder}/TextureLoading.cpp",
                 "${workspaceFolder}/Shapes/shapes.cpp",
+                "${workspaceFolder}/InputManagers/PC_InputManager.cpp",
+                "${workspaceFolder}/VisualTemplates/ListMenu.cpp",
                 "${workspaceFolder}/entryPoint.cpp",
                 "-o",
                 "${workspaceFolder}/Build/irrationalFrontend",

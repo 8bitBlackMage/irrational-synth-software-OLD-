@@ -75,7 +75,7 @@ public:
 ListEntry(int x, int y, int h,int w, std::string text);
 ListEntry(int x, int y ,int h, int w);
 ListEntry();
-
+bool m_isSelected = true;
 
 ~ListEntry();
 
@@ -85,6 +85,6 @@ void Update() override;
 
 
 std::string m_content; 
-bool m_isSelected;
+
 };
 

@@ -2,7 +2,8 @@
 #include <math.h>
 #include <vector>
 #include "TextureLoading.h"
-#include "Shapes/shapes.h"
+#include "InputManagers/InputManager.h"
+#include "VisualTemplates/ListMenu.h"
 
 
 
@@ -28,29 +29,28 @@ int main()
 InitWindow(Width,Height,"testing");
 SetTargetFPS(60);
 TextureManager& manager = TextureManager::getManager();
-std::vector<ListEntry>M_TestArray;
-for(int i = 1; i < 5; i++)
-{
-    M_TestArray.push_back(ListEntry(50,50 * i,30,200,"test"));
+InputManager& Imanager = InputManager::getManager();
+std::vector<std::string>testarray;
+for(int i = 0; i < 5; i++){
+    testarray.push_back("testing");
 }
+
+ListMenu test(testarray);
+
 
 
 //check if windows kill signal has been sent
 while(!WindowShouldClose()){
-
+Imanager.PollInput();
 //set up the window for drawing
     BeginDrawing();
     ClearBackground(BLACK);
-   for(int i =0; i < M_TestArray.size(); i++){
-       M_TestArray.at(i).Draw();
-   }
-
 
 
 //finish rendering  
     EndDrawing();
    
-   // Test.Update();
+   test.Draw();
 }
 //clean up render memory
     CloseWindow();       

@@ -4,11 +4,11 @@ project(irrationalFrontend)
 
 
 include_directories("${PROJECT_SOURCE_DIR}/Shapes")
+include_directories("${PROJECT_SOURCE_DIR}/VisualTemplates")
 
 
 
-
-add_executable(irrationalFrontend entryPoint.cpp TextureLoading.cpp Shapes/shapes.cpp )
+add_executable(irrationalFrontend entryPoint.cpp TextureLoading.cpp Shapes/shapes.cpp VisualTemplates/ListMenu.cpp )
 
 #PC mode 
 target_link_libraries(irrationalFrontend  -lraylib -lGL -lm -lpthread -ldl -lrt -lX11)
