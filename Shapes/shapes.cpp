@@ -52,13 +52,22 @@ DrawTexturePro(m_Manager->m_Textures.at("Dial"),SorceRect,DestRect,origin, m_Cur
 
 
 
-ListEntry::ListEntry(int x, int y, int size )
+ListEntry::ListEntry(int x, int y, int h, int w )
 {
 m_Xpos = x;
 m_Ypos = y;
+m_height = h;
+m_width = w;
 
 }
-
+ListEntry::ListEntry(int x, int y, int h, int w, std::string text)
+{
+m_Xpos = x;
+m_Ypos = y;
+m_height = h;
+m_width = w;
+m_content = text;
+}
 ListEntry::ListEntry(){
 
 }
@@ -68,6 +77,14 @@ ListEntry::~ListEntry(){
 }
 
 void ListEntry::Draw(){
+if(m_isSelected == true){
+    DrawRectangleLines(m_Xpos,m_Ypos,m_width,m_height,WHITE);
+    DrawText(m_content.c_str(),(m_Xpos+10),(m_Ypos+10),15,WHITE);
+}
+if(m_isSelected == false){
+    
+    DrawText(m_content.c_str(),(m_Xpos+10),(m_Ypos+10),15,WHITE);
+}
 
 }
 

@@ -72,7 +72,8 @@ int m_MinPos;
 class ListEntry : public Control
 {
 public:
-ListEntry(int x, int y, int size);
+ListEntry(int x, int y, int h,int w, std::string text);
+ListEntry(int x, int y ,int h, int w);
 ListEntry();
 
 
@@ -84,5 +85,6 @@ void Update() override;
 
 
 std::string m_content; 
+bool m_isSelected;
 };
 

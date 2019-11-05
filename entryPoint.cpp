@@ -1,5 +1,6 @@
 #include <raylib.h>
 #include <math.h>
+#include <vector>
 #include "TextureLoading.h"
 #include "Shapes/shapes.h"
 
@@ -25,9 +26,14 @@ int main()
 
 //setting up the window and render context. 
 InitWindow(Width,Height,"testing");
-//SetTargetFPS(60);
+SetTargetFPS(60);
 TextureManager& manager = TextureManager::getManager();
-dial Test(50,50,32,&manager);
+std::vector<ListEntry>M_TestArray;
+for(int i = 1; i < 5; i++)
+{
+    M_TestArray.push_back(ListEntry(50,50 * i,30,200,"test"));
+}
+
 
 //check if windows kill signal has been sent
 while(!WindowShouldClose()){
@@ -35,15 +41,16 @@ while(!WindowShouldClose()){
 //set up the window for drawing
     BeginDrawing();
     ClearBackground(BLACK);
-    Test.Draw();
-
+   for(int i =0; i < M_TestArray.size(); i++){
+       M_TestArray.at(i).Draw();
+   }
 
 
 
 //finish rendering  
     EndDrawing();
    
-    Test.Update();
+   // Test.Update();
 }
 //clean up render memory
     CloseWindow();       

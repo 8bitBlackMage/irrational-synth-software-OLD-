@@ -8,7 +8,7 @@ TextureManager::TextureManager()
 //standard constructor 
     DIR * pdir;
     struct dirent *entry;
-    if(pdir=opendir("./assets"))
+    if(pdir=opendir("./../assets"))
     {   
     while(entry = readdir(pdir))
         {
@@ -18,7 +18,7 @@ TextureManager::TextureManager()
         if(rawname.find("png") != std::string::npos){
 
 
-        std::string Fullpath = "./assets/" + rawname;
+        std::string Fullpath = "./../assets/" + rawname;
         Texture2D Texture = LoadTexture(Fullpath.c_str());
         size_t lastdot = rawname.find_last_of(".");
        rawname = rawname.substr(0,lastdot);

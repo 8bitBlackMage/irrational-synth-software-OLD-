@@ -13,7 +13,7 @@
                 "${workspaceFolder}/Shapes/shapes.cpp",
                 "${workspaceFolder}/entryPoint.cpp",
                 "-o",
-                "${workspaceFolder}/irrationalFrontend",
+                "${workspaceFolder}/Build/irrationalFrontend",
                 "-lraylib",
                 "-lGL",
                 "-lm",
