@@ -21,7 +21,7 @@ this is the main entry point for the program which handels the major loops for t
 //clang++ entryPoint.cpp -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
 const int Width = 480;
 const int Height = 320;
-
+int updateCounter = 0;
 int main()
 {
 
@@ -35,7 +35,7 @@ for(int i = 0; i < 5; i++){
     testarray.push_back("testing");
 }
 
-ListMenu test(testarray);
+ListMenu test(testarray, Imanager,manager);
 
 
 
@@ -45,12 +45,20 @@ Imanager.PollInput();
 //set up the window for drawing
     BeginDrawing();
     ClearBackground(BLACK);
-
+    test.Draw();
 
 //finish rendering  
     EndDrawing();
    
-   test.Draw();
+  if(updateCounter == 6){
+    updateCounter = 0;
+    test.Update();
+  }
+  else
+  {
+    updateCounter++;
+  }
+  
 }
 //clean up render memory
     CloseWindow();       

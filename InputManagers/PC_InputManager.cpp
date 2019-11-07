@@ -1,14 +1,14 @@
 #include "InputManager.h"
 #include<raylib.h>
-
+#include<stdio.h>
 
 std::vector<KeyboardKey>TestKey;
-
+int test  = 0;
 InputManager::InputManager()
 {
 TestKey.resize(keys::TOTAL);
 input.resize(keys::TOTAL);
-
+debounceTimers.resize(keys::TOTAL);
 
 //mapping the keybord keys to function keys 
 TestKey.at(PLAY)=KeyboardKey::KEY_SPACE;
@@ -46,8 +46,22 @@ void InputManager::PollInput()
 {
 for(int i =0; i < keys::TOTAL; i++)
 {
-    input.at((keys)i) = false;
-    input.at((keys)i) = IsKeyDown(TestKey.at((keys)i));
+    if(IsKeyDown(TestKey.at((keys)i)) != true){
+        input.at((keys)i) = false;
+    }
+
+    
+   
+    if( IsKeyPressed(TestKey.at((keys)i)) == true){
+        test++;
+        printf("pressed \n");
+        printf("%i \n", test);
+        input.at((keys)i) = true;
+    }
+
+        
+   
+
 }
 
 

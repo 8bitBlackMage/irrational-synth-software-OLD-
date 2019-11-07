@@ -1,3 +1,4 @@
+#pragma once
 #include <vector>
 
 
@@ -24,7 +25,7 @@ private:
 InputManager();
 ~InputManager();
 std::vector<bool>input;
-
+std::vector<int>debounceTimers;
 
 
 
