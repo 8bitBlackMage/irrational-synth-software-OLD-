@@ -1,5 +1,6 @@
 echo "testing"
 FILE=Build
+echo $1
 nano CMakeLists.txt
 if [ -d "$FILE" ]; then 
     
@@ -10,5 +11,6 @@ fi
 
     mkdir Build
     cd Build
-    cmake ..
+
+    cmake .. 
     make

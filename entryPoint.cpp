@@ -19,8 +19,8 @@ this is the main entry point for the program which handels the major loops for t
 */
 
 //clang++ entryPoint.cpp -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
-const int Width = 480;
-const int Height = 320;
+const int Width = 800;
+const int Height = 600;
 int updateCounter = 0;
 int main()
 {

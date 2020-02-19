@@ -20,6 +20,6 @@ int EntiresperPage;
 int Pages;
 //page layout info
 int m_entryWidth = 200;
-int m_entryHeight = 30;
+int m_entryHeight = 50;
 int currentlySelected;
 };

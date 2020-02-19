@@ -79,11 +79,11 @@ ListEntry::~ListEntry(){
 void ListEntry::Draw(){
 if(m_isSelected == true){
     DrawRectangleLines(m_Xpos,m_Ypos,m_width,m_height,WHITE);
-    DrawText(m_content.c_str(),(m_Xpos+10),(m_Ypos+10),15,WHITE);
+    DrawText(m_content.c_str(),(m_Xpos+10),(m_Ypos+10),30,WHITE);
 }
 if(m_isSelected == false){
     
-    DrawText(m_content.c_str(),(m_Xpos+10),(m_Ypos+10),15,WHITE);
+    DrawText(m_content.c_str(),(m_Xpos+10),(m_Ypos+10),30,WHITE);
 }
 
 }
